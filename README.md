@@ -1,1 +1,1 @@
-pagesalternate.github.io
+https://pagesalternate.github.io/
