@@ -1,0 +1,7 @@
+// Javscript to customize True Fit Registration behavior if necessary
+(function() {
+    tfcapi('event', 'tfc-fitrec-product', 'render', function(context) {
+        $('div.product_boss_tmpl .fit-element:has(div.tfc-gsa-available button.tfc-cfg-basic-button)').css('display', 'inherit');
+        $('div.product_boss_tmpl .fit-element .tfc-fitrec-product:has(div.tfc-gsa-available button.tfc-cfg-basic-button)').css
+    ('display', 'inherit');})
+})();

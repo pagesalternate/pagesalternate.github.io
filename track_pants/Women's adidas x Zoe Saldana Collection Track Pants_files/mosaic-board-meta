@@ -1,0 +1,83 @@
+/*** Protected by US Patent 6,865,593 and pending patent applications. Webcollage (c) 2000-2020. ***/
+
+if (typeof _wcSiteContentData === "undefined"){
+    _wcSiteContentData = {};
+}
+_wcSiteContentData.generalData = {
+    injectionMethod: "JS",
+    runtimeversion: "2020.10.2.491",
+    site: "kohls",
+    siteName: "Kohls",
+    pagewidth: "800",
+    language: "en",
+    isRtl: false,
+    isSecured: true,
+    isMustBeAdaCompliant: false,
+    scheme: "https",
+    environment: "live",
+    contentgatewayurl: "https://scontent.webcollage.net",
+    defaultdefsresourcebaseurl: "https://scontent.webcollage.net",
+    p2burltemplate: "https://scontent.webcollage.net/%PARTNER_ID%/actions?action=p2b&channel-product-id=%CHANNEL_PRODUCT_ID%",
+    enablesmartbuttons: false,
+    wcfontscompatible: false,
+    scssiteSig: "R003V0XF601V634K0",
+    minScssiteSig: "R01YKHFPX000GMM9J",
+
+    scssiteJitUrl: "https://scontent.webcollage.net/kohls/resources/connections/aplus/js/scssite%40s.js" + "?ver=2020.10.2.491",
+    scsSiteClcUrl: "https://scontent.webcollage.net/apps/pp/assets/kohls/js/scssite%40s.js"
+}
+
+
+if (typeof _wcSiteContentData.cpiData === "undefined"){
+    _wcSiteContentData.cpiData = {};
+}
+
+if (!_wcSiteContentData.cpiData["mosaic-board"]) {
+    _wcSiteContentData.cpiData["mosaic-board"] = {
+        contentType: "mosaic-board",
+        containerId: ".wc-mb",
+        requestType: "sections",
+        layoutType: "horizontal",
+        customizations: {"buttonText":"&#x25b6;  More from the Manufacturer","contentOffset":20,"maxButtonsAllowed":6,"displayClickToView":true,"addToCartText":"Add To Cart","sectionOrder":["video-gallery","tour","consumer-videos","consumer-images","rich-features","three-sixty","document-gallery","image-gallery","related-products"],"overlayType":"lightbox","tooltipType":"content-type","isContentInline":false,"poweredByWebcollage":"none","buttonPosition":"top-left","animation":false,"layout":"one-button","excludedContent":[],"overlaySize":"auto","buttonType":"text","menuOrientation":"left-to-right","defaultOverlayPosition":"below","scrollOverlayToView":true,"maxContentWidth":960},
+        abtest:
+        {
+            enabled: false
+            ,hidefactor: 0
+        },
+        cpis: {}
+    };
+}
+
+_wcSiteContentData.cpiData["mosaic-board"].cpis["4349913"] = {
+    cpi: "4349913",
+    channelProductName: "",
+
+    sections: [
+        {
+        sectionName:"Campaign Video",
+            vendorName:"Zoe Saldana",
+            
+        sectionId:"wc-overview-c6323a107984fcc2fdb8cbb03830f7de",
+        sectionTag:"overview",
+        sectionType:"video-gallery",
+        },
+        {
+        sectionName:"The adidas x Zoe Saldana Collection",
+            vendorName:"Zoe Saldana",
+            
+        sectionId:"wc-campaign-301d92a587266e94451a44fd4adc2365",
+        sectionTag:"campaign",
+        sectionType:"image-gallery"
+        },
+    ],
+    modulewcpcpairs: [
+        {
+            module: "hnkdhcdaryolihovtco",
+            wcpc: "1601265254891"
+        }
+    ]
+};
+
+
+
+

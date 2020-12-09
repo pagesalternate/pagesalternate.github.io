@@ -1,0 +1,75 @@
+/*** Protected by US Patent 6,865,593 and pending patent applications. Webcollage (c) 2000-2020. ***/
+
+if (typeof _wcSiteContentData === "undefined"){
+    _wcSiteContentData = {};
+}
+_wcSiteContentData.generalData = {
+    injectionMethod: "JS",
+    runtimeversion: "2020.7.2.487",
+    site: "kohls",
+    siteName: "Kohls",
+    pagewidth: "800",
+    language: "en",
+    isRtl: false,
+    isSecured: true,
+    isMustBeAdaCompliant: false,
+    scheme: "https",
+    environment: "live",
+    contentgatewayurl: "https://scontent.webcollage.net",
+    defaultdefsresourcebaseurl: "https://scontent.webcollage.net",
+    p2burltemplate: "https://scontent.webcollage.net/%PARTNER_ID%/actions?action=p2b&channel-product-id=%CHANNEL_PRODUCT_ID%",
+    enablesmartbuttons: false,
+    wcfontscompatible: false,
+    scssiteSig: "R003V0XF801V634K2",
+    minScssiteSig: "R01YKHFPV000GMM9H",
+
+    scssiteJitUrl: "https://scontent.webcollage.net/kohls/resources/connections/aplus/js/scssite%40s.js" + "?ver=2020.7.2.487",
+    scsSiteClcUrl: "https://scontent.webcollage.net/apps/pp/assets/kohls/js/scssite%40s.js"
+}
+
+
+if (typeof _wcSiteContentData.cpiData === "undefined"){
+    _wcSiteContentData.cpiData = {};
+}
+
+if (!_wcSiteContentData.cpiData["mosaic-board"]) {
+    _wcSiteContentData.cpiData["mosaic-board"] = {
+        contentType: "mosaic-board",
+        containerId: ".wc-mb",
+        requestType: "sections",
+        layoutType: "horizontal",
+        customizations: {"buttonText":"&#x25b6;  More from the Manufacturer","contentOffset":20,"maxButtonsAllowed":6,"displayClickToView":true,"addToCartText":"Add To Cart","sectionOrder":["video-gallery","tour","consumer-videos","consumer-images","rich-features","three-sixty","document-gallery","image-gallery","related-products"],"overlayType":"lightbox","tooltipType":"content-type","isContentInline":false,"poweredByWebcollage":"none","buttonPosition":"top-left","animation":false,"layout":"one-button","excludedContent":[],"overlaySize":"auto","buttonType":"text","menuOrientation":"left-to-right","defaultOverlayPosition":"below","scrollOverlayToView":true,"maxContentWidth":960},
+        abtest:
+        {
+            enabled: false
+            ,hidefactor: 0
+        },
+        cpis: {}
+    };
+}
+
+_wcSiteContentData.cpiData["mosaic-board"].cpis["3959275"] = {
+    cpi: "3959275",
+    channelProductName: "",
+
+    sections: [
+        {
+        sectionName:"adidas Sports Bras",
+            vendorName:"Sports Bra- Kohls",
+            
+        sectionId:"wc-about-7e418e942db27919bd824bc177aa97b1",
+        sectionTag:"about",
+        sectionType:"image-gallery"
+        },
+    ],
+    modulewcpcpairs: [
+        {
+            module: "hnkdhcdaryolihovtco",
+            wcpc: "1591806023200"
+        }
+    ]
+};
+
+
+
+

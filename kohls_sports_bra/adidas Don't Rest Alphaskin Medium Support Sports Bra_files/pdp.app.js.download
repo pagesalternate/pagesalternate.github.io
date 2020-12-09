@@ -1,0 +1,202 @@
+$module('productDetail', function(log, api, module, Kjs) {
+    $requires(['${$jsRoot("snb")}javascript/deploy/productDetailsPage.js']); // Required JS files
+    $tmpl.load('javascript/deploy/tpl/tpl.pdpPageTmplV1.js'); //Required Templates
+    $load.css('system.css');
+    var
+    renderView = function() {
+		//[*] See pdpHeroImagePanel, pdpContentPanel, pdpStyliticsPanel to see how architecture should be.
+
+        var layoutPrdConfigPanel = Kjs.pdpPrdConfigPanel.panel,
+        layoutMetaInfoPanel = Kjs.pdpMetaInfoPanel.panel,
+        layoutBreadcrumbPanel = Kjs.pdpBreadcrumbPanel.panel,
+        layoutTitlePanel = Kjs.pdpTitlePanel.panel,
+        layoutAdsensePanel = Kjs.pdpAdSensePanel.panel,
+        layoutBDRecsPanel = Kjs.pdpBDRecsPanel.panel,
+        layoutBVDetailsPanel = Kjs.pdpBVDetailsPanel.panel,
+        layoutDFPAdsPanel = Kjs.pdpDFPAdsPanel.panel,
+        layoutFeaturedProductsPanel = Kjs.pdpFeaturedProductsPanel.panel,
+	    layoutStyliticsPanel = Kjs.pdpStyliticsPanel.panel,
+        layoutTrendagePanel = Kjs.pdpTrendagePanel.panel,
+        layoutWebCollageInlinePanel = Kjs.pdpWebCollageInlinePanel.panel,
+        layoutHeroImagePanel = Kjs[productV2JsonData.heroImagePanelName].panel,
+        layoutContentPanel = Kjs.pdpContentPanel.panel,
+        layoutDetailsTabPanel = Kjs.pdpDetailsTabPanel.panel,
+        layoutPanel = Kjs.pdpPanel.panel;
+
+        layoutContentPanel.attach('pdpBreadcrumbPanel', layoutBreadcrumbPanel)
+        .attach('pdpTitlePanel', layoutTitlePanel)
+        .attach('pdpDetailsTabPanel', layoutDetailsTabPanel)
+        .attach('pdpHeroImagePanel', layoutHeroImagePanel)
+        .attach('pdpPrdConfigPanel', layoutPrdConfigPanel);
+
+        layoutPanel.attach('pdpMetaInfoPanel', layoutMetaInfoPanel)
+        .attach('pdpContentPanel', layoutContentPanel)
+        .attach('pdpAdSensePanel', layoutAdsensePanel)
+        .attach('pdpBDRecsPanel', layoutBDRecsPanel)
+        .attach('pdpBVDetailsPanel', layoutBVDetailsPanel)
+        .attach('pdpDFPAdsPanel', layoutDFPAdsPanel)
+        .attach('pdpFeaturedProductsPanel', layoutFeaturedProductsPanel)
+		.attach('pdpStyliticsPanel', layoutStyliticsPanel)
+        .attach('pdpTrendagePanel', layoutTrendagePanel)
+        .attach('pdpWebCollageInlinePanel', layoutWebCollageInlinePanel);
+
+        layoutPanel.helper(Kjs.pdpV3TmplHelper);
+
+        layoutPanel.render({
+            productV2JsonData: productV2JsonData,
+		    $env: $env
+	    });
+
+    },
+    renderThirdParty = function() {
+        if (history && history.length <= 2) {
+            $("#backArrow, #backButton").hide();
+        }
+        if ($env.enableVgcRedesign && productV2JsonData.productType && productV2JsonData.productType.isVGC) {
+            $(".pdp-addtobag").attr("disabled", "true").addClass('bopusmuted');
+        }
+        $(window).on("click", function(event) {
+
+            if (($(".add-tolist a").is(event.target)) &&
+                (($('.pdp-size-swatch').length > 0 && !$('.pdp-size-swatch').hasClass('active')) ||
+                    $('#size-dropdown :selected').attr('data-skusize') == "false")) {
+                $(".add-tolist a").attr("id", "");
+                $(".khrg_addToList_container_new").removeClass("hideAnyWaySkava").show();
+                $(".khwl_addToList_container_new").removeClass("hideAnyWaySkava").show();
+                $(".pdp-product-size").addClass("error-yellow");
+            }
+            // if the target of the click isn't the container nor a descendant of the container
+            if (!$(".pdp-addtobag").is(event.target) &&
+                !$(".add-tolist a").is(event.target) && !$(".ce-fis").is(event.target)) {
+                if ((($('.pdp-size-swatch').length > 0 && $('.pdp-size-swatch').hasClass('active')) || $('#size-dropdown :selected').attr('data-skusize') == "true")) {
+                    $(".add-tolist a").attr("id", "khwl_id_atlLink_addtolist");
+                }
+                $(".pdp-product-size").removeClass("error-yellow");
+                $('.pdp-product-qty-wrapper').removeClass('quantity-error');
+                $('.pdp-qty-inventory-msg .pdp-qty-inventory-msg-txt').text('');
+                $('.pdp-product-increase p').removeClass('pdp-qtty-boss-disable');
+
+                $(".khrg_addToList_container_new").addClass("hideAnyWaySkava").hide();
+                $(".khwl_addToList_container_new").addClass("hideAnyWaySkava").hide();
+            }
+        });
+        // Scroll back to top
+        if ($('.scrollToTop').length > 0) {
+            $('.scrollToTop').css("display", "none");
+            // Check to see if the window is top if not then display button
+            $(window).scroll(function() {
+                if ($(this).scrollTop() > 100) {
+                    $('.scrollToTop').css("display", "block");
+                } else {
+                    $('.scrollToTop').css("display", "none");
+                }
+            });
+            // Click event to scroll to top
+            $('.scrollToTop').click(function() {
+                $('html, body').animate({
+                    scrollTop: 0
+                }, 800);
+                return false;
+            });
+        }
+
+        Kjs.pdpThirdParty.loadThirdparty();
+    };
+
+    $ready(function _$ready_pdpRedesign($) {
+        if (typeof productV2JsonData !== 'undefined') {
+            productV2JsonData.onLoad = true;
+
+            if ($env.enableHeroAlign) {
+    			// Prevent persistent bar persistence for maximum viewing area
+    			$('#persistent_bar_container').removeClass('nonPersistent').addClass('nonPersistent');
+    			var d = $('<div style="position: sticky;"></div>').appendTo('body');
+    			$env.enableHeroAlign = d.css('position') == 'sticky';
+    			d.remove();
+    		}
+
+            //First render :: Used to attach the HTML renedered on the server.
+            renderView();
+
+            //re-render the sku's to supress the OOS
+            /*if (productV2JsonData.environment == 'staging' ||
+                (!productV2JsonData.noProductInv &&
+                    (!productV2JsonData.isShippingNotAvailable ||
+                        (productV2JsonData.isBopusEligible || productV2JsonData.isBossEligible)
+                    )
+                )
+            ){
+                var json={};
+                json.isBMSM = $env.isBMSM;
+                json.$env=$env;
+                json.productV2JsonData=productV2JsonData;
+                Kjs.pdpPrdConfigPanel.panel.render(json);
+            }*/
+
+            Kjs.pdpUtils.initBagItem();
+            Kjs.pdpPrdConfigPanel.editPDPQuatityBySKU();
+
+            if (productV2JsonData.teaserData &&
+                productV2JsonData.productStatus != 'Out of Stock'){
+                Kjs.pdpDetailsTabPanel.panel.render();
+            }
+
+
+            /*if (productV2JsonData.teaserData &&
+                productV2JsonData.teaserData != '' &&
+                productV2JsonData.productStatus != 'Out of Stock')
+            {
+                if (!(productV2JsonData.teaserData.productOfferDetails &&
+                    productV2JsonData.teaserData.productOfferDetails.length>0 &&
+                    productV2JsonData.teaserData.productOfferDetails[0].isGetProduct)){
+                        reRenderDetailsTab();
+                }
+
+                if (($('.gwp-pwp-teaser').length <= 0)||
+                    (productV2JsonData.teaserData.productOfferDetails &&
+                        productV2JsonData.teaserData.productOfferDetails.length>0 &&
+                        productV2JsonData.teaserData.productOfferDetails[0].isGetProduct)
+                    )
+                {
+                    Kjs.pdpUtils.ManageSuppressed(productV2JsonData, productV2JsonData.staticContents.suppressedMsg, productV2JsonData.webID, 'pdp-Pricing', 'P');
+                }
+                if (productV2JsonData.price && productV2JsonData.price.salePriceStatus == 'YOUR PRICE') {
+                    $('#tabShippingAndReturns').hide();
+                    $('#tabgwp').hide();
+                    $('#tabpwp').hide();
+                }
+            }
+            else {
+                if ($('#gwpTabContent').length > 0) {
+                    if (productV2JsonData.gwp == '') $('#tabgwp').hide();
+                }
+                if ($('#pwpTabContent').length > 0) {
+                    if (productV2JsonData.pwp == '') $('#tabpwp').hide();
+                }
+            }*/
+            //Show Next Product Links
+		    if ($tf($env.enableNextButtonOnPDP)) Kjs.pdpBreadcrumbPanel.showNextProductLink();
+            renderThirdParty();
+        }
+    });
+    $init(function _$init_pdpRedesign($) {
+        if (productV2JsonData !== 'undefined') {
+            productId = productV2JsonData.webID;
+            Kjs.datapdp.initialPdpData();
+            $tmpl.load('../templates/clientSidePdpScripts.js');
+            if(window.isThumbnailCarouselView){
+                $env.isThumbnailScrollView = false;
+            }else{
+                $env.isThumbnailScrollView = true;
+            }
+        }
+    });
+    $init(function _$init_pdpRedesignBoot($) {
+        if (productV2JsonData !== 'undefined') {
+            Kjs.datapdp.setStoreInfo();
+            if ($env.enableYPWalletOffer && Kjs.cookie.get('DYN_USER_ID') != '') {
+                Kjs.datapdp.getWalletOffers();
+            }
+        }
+    },{isBoot: true});
+});

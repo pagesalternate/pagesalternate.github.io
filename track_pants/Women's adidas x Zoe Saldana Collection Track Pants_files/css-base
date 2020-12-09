@@ -1,0 +1,41 @@
+
+@font-face {
+    font-family: 'wcOpenSans';
+    src: url('/_wc/default-defs/resources/common/font/opensans_latin/OpenSans-Regular-webfont.eot');
+    src: url('/_wc/default-defs/resources/common/font/opensans_latin/OpenSans-Regular-webfont.eot?#iefix') format('embedded-opentype'),
+    url('/_wc/default-defs/resources/common/font/opensans_latin/OpenSans-Regular-webfont.woff') format('woff'),
+    url('/_wc/default-defs/resources/common/font/opensans_latin/OpenSans-Regular-webfont.ttf') format('truetype'),
+    url('/_wc/default-defs/resources/common/font/opensans_latin/OpenSans-Regular-webfont.svg#wcOpenSans') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'wcOpenSans';
+    src: url('/_wc/default-defs/resources/common/font/opensans_latin/OpenSans-Italic-webfont.eot');
+    src: url('/_wc/default-defs/resources/common/font/opensans_latin/OpenSans-Italic-webfont.eot?#iefix') format('embedded-opentype'),
+    url('/_wc/default-defs/resources/common/font/opensans_latin/OpenSans-Italic-webfont.woff') format('woff'),
+    url('/_wc/default-defs/resources/common/font/opensans_latin/OpenSans-Italic-webfont.ttf') format('truetype'),
+    url('/_wc/default-defs/resources/common/font/opensans_latin/OpenSans-Italic-webfont.svg#wcOpenSans') format('svg');
+    font-weight: normal;
+    font-style: italic;
+}
+@font-face {
+    font-family: 'wcOpenSans';
+    src: url('/_wc/default-defs/resources/common/font/opensans_latin/OpenSans-Bold-webfont.eot');
+    src: url('/_wc/default-defs/resources/common/font/opensans_latin/OpenSans-Bold-webfont.eot?#iefix') format('embedded-opentype'),
+    url('/_wc/default-defs/resources/common/font/opensans_latin/OpenSans-Bold-webfont.woff') format('woff'),
+    url('/_wc/default-defs/resources/common/font/opensans_latin/OpenSans-Bold-webfont.ttf') format('truetype'),
+    url('/_wc/default-defs/resources/common/font/opensans_latin/OpenSans-Bold-webfont.svg#wcOpenSans') format('svg');
+    font-weight: bold;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'wcOpenSans';
+    src: url('/_wc/default-defs/resources/common/font/opensans_latin/OpenSans-BoldItalic-webfont.eot');
+    src: url('/_wc/default-defs/resources/common/font/opensans_latin/OpenSans-BoldItalic-webfont.eot?#iefix') format('embedded-opentype'),
+    url('/_wc/default-defs/resources/common/font/opensans_latin/OpenSans-BoldItalic-webfont.woff') format('woff'),
+    url('/_wc/default-defs/resources/common/font/opensans_latin/OpenSans-BoldItalic-webfont.ttf') format('truetype'),
+    url('/_wc/default-defs/resources/common/font/opensans_latin/OpenSans-BoldItalic-webfont.svg#wcOpenSans') format('svg');
+    font-weight: bold;
+    font-style: italic;
+}

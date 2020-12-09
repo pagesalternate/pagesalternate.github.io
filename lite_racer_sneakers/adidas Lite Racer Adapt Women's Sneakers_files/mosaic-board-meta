@@ -1,0 +1,83 @@
+/*** Protected by US Patent 6,865,593 and pending patent applications. Webcollage (c) 2000-2020. ***/
+
+if (typeof _wcSiteContentData === "undefined"){
+    _wcSiteContentData = {};
+}
+_wcSiteContentData.generalData = {
+    injectionMethod: "JS",
+    runtimeversion: "2020.7.2.487",
+    site: "kohls",
+    siteName: "Kohls",
+    pagewidth: "800",
+    language: "en",
+    isRtl: false,
+    isSecured: true,
+    isMustBeAdaCompliant: false,
+    scheme: "https",
+    environment: "live",
+    contentgatewayurl: "https://scontent.webcollage.net",
+    defaultdefsresourcebaseurl: "https://scontent.webcollage.net",
+    p2burltemplate: "https://scontent.webcollage.net/%PARTNER_ID%/actions?action=p2b&channel-product-id=%CHANNEL_PRODUCT_ID%",
+    enablesmartbuttons: false,
+    wcfontscompatible: false,
+    scssiteSig: "R003V0XF801V634K2",
+    minScssiteSig: "R01YKHFPV000GMM9H",
+
+    scssiteJitUrl: "https://scontent.webcollage.net/kohls/resources/connections/aplus/js/scssite%40s.js" + "?ver=2020.7.2.487",
+    scsSiteClcUrl: "https://scontent.webcollage.net/apps/pp/assets/kohls/js/scssite%40s.js"
+}
+
+
+if (typeof _wcSiteContentData.cpiData === "undefined"){
+    _wcSiteContentData.cpiData = {};
+}
+
+if (!_wcSiteContentData.cpiData["mosaic-board"]) {
+    _wcSiteContentData.cpiData["mosaic-board"] = {
+        contentType: "mosaic-board",
+        containerId: ".wc-mb",
+        requestType: "sections",
+        layoutType: "horizontal",
+        customizations: {"buttonText":"&#x25b6;  More from the Manufacturer","contentOffset":20,"maxButtonsAllowed":6,"displayClickToView":true,"addToCartText":"Add To Cart","sectionOrder":["video-gallery","tour","consumer-videos","consumer-images","rich-features","three-sixty","document-gallery","image-gallery","related-products"],"overlayType":"lightbox","tooltipType":"content-type","isContentInline":false,"poweredByWebcollage":"none","buttonPosition":"top-left","animation":false,"layout":"one-button","excludedContent":[],"overlaySize":"auto","buttonType":"text","menuOrientation":"left-to-right","defaultOverlayPosition":"below","scrollOverlayToView":true,"maxContentWidth":960},
+        abtest:
+        {
+            enabled: false
+            ,hidefactor: 0
+        },
+        cpis: {}
+    };
+}
+
+_wcSiteContentData.cpiData["mosaic-board"].cpis["3701307"] = {
+    cpi: "3701307",
+    channelProductName: "adidas Lite Racer Adapt Women\'s Sneakers, Size: 10, Black",
+
+    sections: [
+        {
+        sectionName:"adidas Video",
+            vendorName:"W LITE RACER ADAPT",
+            productCategory:"Footwear_Tier 3",
+        sectionId:"wc-other-9bc9977b",
+        sectionTag:"other",
+        sectionType:"video-gallery",
+        },
+        {
+        sectionName:"adidas Header",
+            vendorName:"W LITE RACER ADAPT",
+            productCategory:"Footwear_Tier 3",
+        sectionId:"wc-other-c3d0a460",
+        sectionTag:"other",
+        sectionType:"image-gallery"
+        },
+    ],
+    modulewcpcpairs: [
+        {
+            module: "adidas",
+            wcpc: "1580847347488"
+        }
+    ]
+};
+
+
+
+

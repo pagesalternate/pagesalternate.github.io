@@ -1,0 +1,52 @@
+WishlistConfig={
+  setCustListBtn: {
+    isCustListBtnOn: true,
+    getListType: "blckFriday",
+    "empty": {
+      elmClsPrefix: "",
+      contClass: "",
+      text: "",
+      left: "",
+      right: "",
+      middle: "",
+      backgroundColor: "",
+      textColor: "",
+      shareMsg: "",
+      largeImg: "",
+      mobilelargeImg: "",
+      appHeight: ""
+    },
+    "blckFriday": {
+      elmClsPrefix: "addToBlackFridayList",
+      contClass: "pdtBlackFriday",
+      text: "Kohl's Black Friday List",
+      left: "https://cdnassets-kohls.skavaone.com/curatedlist/2/dsktp_btn_addtovalentinelist_sl_left.png",
+      right: "https://cdnassets-kohls.skavaone.com/curatedlist/2/dsktp_btn_addtovalentinelist_sl_right.png",
+      middle: "https://cdnassets-kohls.skavaone.com/curatedlist/2/btn_addtobflist1.png",
+      backgroundColor: "#D72530",
+      textColor: "#FFFFFF",
+      shareMsg: "Just for you--we've suggested our best Black Friday gifts for your list.",
+      largeImg: "https://cdnassets-kohls.skavaone.com/curatedlist/2/btn_addtobflist.png",
+      mobilelargeImg: "https://cdnassets-kohls.skavaone.com/curatedlist/2/btn_addtobflist.png",
+      appHeight: "34px",
+      label: "BLACK FRIDAY PREVIEW PRICING",
+      isCustomPrice: true,
+      priceType: "Black Friday",
+	  previewPriceLabel: {
+		longLabel: "BLACK FRIDAY PRICE PREVIEW",
+		smallLabel: "BLACK FRIDAY PREVIEW"
+	  },
+	  dateText: "Sale starts Monday!"	  
+    },
+    ssTabOn: true,
+    fisOn: false,
+    promoText: "for final price, add to bag"
+  },
+  brightTagKey: "4DPyaxM"
+};
+KohlsConfig.customListName = "Kohl's Black Friday List";
+/*
+KohlsWishList.prototype.setCustomListButton=function(buttonType,button_div_id,buttonClickHandler,addToListBtnCss)
+{
+	$('.khwl_withCustomList').removeClass('khwl_withCustomList');
+};*/

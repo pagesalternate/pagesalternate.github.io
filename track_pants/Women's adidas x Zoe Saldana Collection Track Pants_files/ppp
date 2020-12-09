@@ -1,0 +1,74 @@
+/*** Protected by US Patent 6,865,593 and pending patent applications. Webcollage (c) 2000-2020. ***/
+
+if (typeof window.Webcollage == 'undefined')
+  window.Webcollage = {};
+
+window.Webcollage._extForMinMax = new RegExp("(?:\\.min)?\\.(js|css)$", "i");
+
+window.Webcollage.minOrMax = function(fileName) {
+  if(document.location.search.indexOf("webcollage-scripts=max") == -1)
+    return fileName.replace(window.Webcollage._extForMinMax, ".min.$1");
+  else
+    return fileName;
+};
+
+_wccontent = {
+  injectionMethod: "JS",
+  runtimeversion: "2020.10.2.491",
+  site: "kohls",
+  siteName: "Kohls",
+  cpi: "4349913",
+  channelProductName: "",
+  pagewidth: "800",
+  language: "en",
+  isRtl: false,
+  abTesting: {isOn:false, test : { variations : [ {code: "A", f: 0.5},  {code: "B", f: 0.5} ] }},
+  shouldReportSectionViewInPP: true,
+  isSecured: true,
+  isMustBeAdaCompliant: false,
+  scheme: "https",
+  environment: "live",
+  contentgatewayurl: "https://scontent.webcollage.net",
+  defaultdefsresourcebaseurl: "https://scontent.webcollage.net",
+  p2burltemplate: "https://scontent.webcollage.net/%PARTNER_ID%/actions?action=p2b&channel-product-id=%CHANNEL_PRODUCT_ID%",
+  enablesmartbuttons: false,
+  wcfontscompatible: false,
+  acssiteSig: "R01EYVXHB00K284IL",
+  minAcssiteSig: "R00ZPAJFC00ZBTIKA",
+  abtest:
+  {
+    enabled: false,
+    hidefactor : 0.0
+  },
+  aplus:
+  {
+    modulewcpcpairs: [
+      {
+        module: "hnkdhcdaryolihovtco",
+        wcpc: "1601265254891"
+      }
+    ],
+
+    html: "<div class=\"wc-responsive\" id=\"wc-aplus\"><h1 class=\"wc-ppp-caption\">From the Manufacturer<span class=\"wc-powered-by-tagline wc-top-powered-by-tagline\"><span class=\"wc-powered-by-tagline-separator\">|<\/span><span class=\"wc-powered-by-webcollage-text\">Powered by &nbsp;<img alt=\"Webcollage\" src=\"https:\/\/scontent.webcollage.net\/_wc\/default-defs\/resources\/common\/syndigo.svg?v=2020.10.2.491\">&nbsp;<\/span><\/span><\/h1><div class=\"wc-fragment\" data-channel-product-name=\"\" data-compiler-v=\"2020.10.2.491\" data-cpi=\"4349913\" data-gtin=\"00191983187571\" data-is-capdesc-open=\"false\" data-language-code=\"en\" data-module-brand=\"ecg-kohls-14918\" data-module-code=\"hnkdhcdaryolihovtco\" data-module-name=\"ecg-kohls-14918\" data-produced=\"2020-10-06 09:33\" data-section-caption=\"The adidas x Zoe Saldana Collection\" data-section-tag=\"campaign\" data-section-template-code=\"image-gallery\" data-vendor-name=\"Zoe Saldana\" data-wcpc=\"1601265254891\" id=\"wc-campaign-301d92a587266e94451a44fd4adc2365\"><h2 class=\"wc-first-header\">The adidas x Zoe Saldana Collection<\/h2><div class=\"wc-aplus-body\"><span> <div class=\"wc-mediaGallery\" data-module-id=\"hnkdhcdaryolihovtco\" data-resources-base=\"https:\/\/smedia.webcollage.net\/rwvfp\/wc\/cp\/1601498976773_55abd1b9-3e0a-4844-b3a3-46552d69879e\/module\/hnkdhcdaryolihovtco\/\" data-wcpc=\"1601265254891\"> <div class=\"wc-json-data\" style=\"display: none !important\">{\"layout\":\"product-views\",\"images\":[{\"sources\":[{\"src\":\"\/_cp\/products\/1601265254891\/tab-301d92a5-8726-6e94-451a-44fd4adc2365\/3c516fa98bcc45fc8485ed529ed4bdd7.jpg.w1920.jpg\",\"width\":960,\"height\":600},{\"src\":\"\/_cp\/products\/1601265254891\/tab-301d92a5-8726-6e94-451a-44fd4adc2365\/3c516fa98bcc45fc8485ed529ed4bdd7.jpg.w960.jpg\",\"width\":960,\"height\":600},{\"src\":\"\/_cp\/products\/1601265254891\/tab-301d92a5-8726-6e94-451a-44fd4adc2365\/3c516fa98bcc45fc8485ed529ed4bdd7.jpg.w480.jpg\",\"width\":480,\"height\":300},{\"src\":\"\/_cp\/products\/1601265254891\/tab-301d92a5-8726-6e94-451a-44fd4adc2365\/3c516fa98bcc45fc8485ed529ed4bdd7.jpg.w240.jpg\",\"width\":240,\"height\":150}],\"src\":{\"src\":\"\/_cp\/products\/1601265254891\/tab-301d92a5-8726-6e94-451a-44fd4adc2365\/3c516fa98bcc45fc8485ed529ed4bdd7.jpg\",\"width\":960,\"height\":600},\"runtimeSrc\":{\"src\":\"\/_cp\/products\/1601265254891\/tab-301d92a5-8726-6e94-451a-44fd4adc2365\/3c516fa98bcc45fc8485ed529ed4bdd7.jpg.web.jpg\",\"width\":960,\"height\":600},\"assetWrapper\":\"image-gallery\",\"caption\":\"Zoe Saldana\",\"description\":\"\",\"isAdaCompliant\":true}]}<\/div> <\/div> <table cellspacing=\"0\" class=\"wc-gallery-table wc-image-gallery-table\" style=\"display:none;\"> <tr class=\"wc-first-row wc-last-row\"> <td class=\"wc-first-column wc-last-column wc-image-gallery-table\"> <div class=\"wc-gallery-thumb\"> <img alt=\"Zoe Saldana\" data-asset-title=\"Zoe Saldana\" data-asset-type=\"image\" data-asset-url=\"\/_cp\/products\/1601265254891\/tab-301d92a5-8726-6e94-451a-44fd4adc2365\/3c516fa98bcc45fc8485ed529ed4bdd7.jpg?xml}\" data-asset-wrapper=\"image-gallery\" data-collection-size=\"1\" data-height=\"90\" data-index-in-collection=\"0\" data-width=\"120\" height=\"150\" module-id=\"hnkdhcdaryolihovtco\" src=\"https:\/\/smedia.webcollage.net\/rwvfp\/wc\/cp\/1601498976773_55abd1b9-3e0a-4844-b3a3-46552d69879e\/module\/hnkdhcdaryolihovtco\/_cp\/products\/1601265254891\/tab-301d92a5-8726-6e94-451a-44fd4adc2365\/3c516fa98bcc45fc8485ed529ed4bdd7.jpg.w240.jpg\" style=\"height: 90px !important; width:144px !important;margin-left: -12px !important;border:0 !important;\" title=\"Zoe Saldana\" wcobj=\"https:\/\/smedia.webcollage.net\/rwvfp\/wc\/cp\/1601498976773_55abd1b9-3e0a-4844-b3a3-46552d69879e\/module\/hnkdhcdaryolihovtco\/_cp\/products\/1601265254891\/tab-301d92a5-8726-6e94-451a-44fd4adc2365\/3c516fa98bcc45fc8485ed529ed4bdd7.jpg.w1920.jpg\" wcobj-height=\"600\" wcobj-type=\"image\/*\" wcobj-width=\"960\" wcpc=\"1601265254891\" width=\"240\"> <\/div> <\/td> <\/tr> <\/table> <\/span><\/div><div class=\"wc-clear-both\" style=\"height: 0px !important\"><\/div><\/div><div class=\"wc-fragment\" data-channel-product-name=\"\" data-compiler-v=\"2020.10.2.491\" data-cpi=\"4349913\" data-gtin=\"00191983187571\" data-is-capdesc-open=\"false\" data-is-lifestyle=\"true\" data-is-lifestyle-hide-caption=\"true\" data-language-code=\"en\" data-module-brand=\"ecg-kohls-14918\" data-module-code=\"hnkdhcdaryolihovtco\" data-module-name=\"ecg-kohls-14918\" data-produced=\"2020-10-06 09:33\" data-section-caption=\"Campaign Video\" data-section-tag=\"overview\" data-section-template-code=\"video-gallery\" data-vendor-name=\"Zoe Saldana\" data-wcpc=\"1601265254891\" id=\"wc-overview-c6323a107984fcc2fdb8cbb03830f7de\"><h2>Campaign Video<\/h2><div class=\"wc-aplus-body\"><div class=\"wc-video-gallery\" data-module-id=\"hnkdhcdaryolihovtco\" data-resources-base=\"https:\/\/smedia.webcollage.net\/rwvfp\/wc\/cp\/1601498976773_55abd1b9-3e0a-4844-b3a3-46552d69879e\/module\/hnkdhcdaryolihovtco\/\"> <div class=\"wc-json-data\" style=\"display: none !important\">{\"layout\":\"lifestyle\",\"videos\":[{\"duration\":30.03,\"isAdaCompliantTranscripts\":false,\"sources\":[{\"src\":\"\/_cp\/products\/1601265254891\/tab-c6323a10-7984-fcc2-fdb8-cbb03830f7de\/d5f4afcea7864fa3a84ba37a0ce88843.mp4.mp4full.mp4\",\"profile\":\"MP4FULL\",\"width\":1920,\"height\":1080},{\"src\":\"\/_cp\/products\/1601265254891\/tab-c6323a10-7984-fcc2-fdb8-cbb03830f7de\/d5f4afcea7864fa3a84ba37a0ce88843.mp4.mobile.mp4\",\"profile\":\"MOBILE\",\"width\":960,\"height\":540}],\"src\":{\"src\":\"\/_cp\/products\/1601265254891\/tab-c6323a10-7984-fcc2-fdb8-cbb03830f7de\/d5f4afcea7864fa3a84ba37a0ce88843.mp4\",\"width\":1920,\"height\":1080},\"runtimePoster\":{\"sources\":[{\"src\":\"\/_cp\/products\/1601265254891\/tab-c6323a10-7984-fcc2-fdb8-cbb03830f7de\/6878408686444be9ae6b69aedd61fa23.jpg.w1920.jpg\",\"width\":1920,\"height\":1080},{\"src\":\"\/_cp\/products\/1601265254891\/tab-c6323a10-7984-fcc2-fdb8-cbb03830f7de\/6878408686444be9ae6b69aedd61fa23.jpg.w960.jpg\",\"width\":960,\"height\":540},{\"src\":\"\/_cp\/products\/1601265254891\/tab-c6323a10-7984-fcc2-fdb8-cbb03830f7de\/6878408686444be9ae6b69aedd61fa23.jpg.w480.jpg\",\"width\":480,\"height\":270},{\"src\":\"\/_cp\/products\/1601265254891\/tab-c6323a10-7984-fcc2-fdb8-cbb03830f7de\/6878408686444be9ae6b69aedd61fa23.jpg.w240.jpg\",\"width\":240,\"height\":135}],\"src\":{\"src\":\"\/_cp\/products\/1601265254891\/tab-c6323a10-7984-fcc2-fdb8-cbb03830f7de\/80d549ab-004e-4ea7-8429-c8b543ad9636.jpg\",\"width\":1920,\"height\":1080},\"runtimeSrc\":{\"src\":\"\/_cp\/products\/1601265254891\/tab-c6323a10-7984-fcc2-fdb8-cbb03830f7de\/80d549ab-004e-4ea7-8429-c8b543ad9636.jpg.w1920.jpg\",\"width\":1920,\"height\":1080},\"editorOriginalName\":\"6878408686444be9ae6b69aedd61fa23.jpg\",\"isAdaCompliant\":false},\"assetWrapper\":\"video-gallery\",\"description\":\"\",\"caption\":\"Campaign Video\",\"showVideoCaption\":true,\"isAdaCompliant\":false,\"reportingCode\":\"\"}]}<\/div> <div class=\"wc-meta wc-gallery-thumb\" itemprop=\"video\" itemscope=\"itemscope\" itemtype=\"https:\/\/schema.org\/VideoObject\" module-id=\"hnkdhcdaryolihovtco\" wcobj=\"https:\/\/smedia.webcollage.net\/rwvfp\/wc\/cp\/1601498976773_55abd1b9-3e0a-4844-b3a3-46552d69879e\/module\/hnkdhcdaryolihovtco\/_cp\/products\/1601265254891\/tab-c6323a10-7984-fcc2-fdb8-cbb03830f7de\/d5f4afcea7864fa3a84ba37a0ce88843.mp4.mp4full.mp4\" wcobj-type=\"video\/x-flv\" wcpc=\"1601265254891\"> <meta content=\"Campaign Video\" itemprop=\"name\"><meta content=\"Campaign Video\" itemprop=\"description\"><meta content=\"https:\/\/smedia.webcollage.net\/rwvfp\/wc\/cp\/1601498976773_55abd1b9-3e0a-4844-b3a3-46552d69879e\/module\/hnkdhcdaryolihovtco\/_cp\/products\/1601265254891\/tab-c6323a10-7984-fcc2-fdb8-cbb03830f7de\/d5f4afcea7864fa3a84ba37a0ce88843.mp4.mp4full.mp4\" itemprop=\"contentUrl\"><meta content=\"1080\" itemprop=\"height\"><meta content=\"1920\" itemprop=\"width\"><meta content=\"2020-09-28T15:20:04.000Z\" itemprop=\"uploadDate\"><meta content=\"https:\/\/smedia.webcollage.net\/rwvfp\/wc\/cp\/1601498976773_55abd1b9-3e0a-4844-b3a3-46552d69879e\/module\/hnkdhcdaryolihovtco\/_cp\/products\/1601265254891\/tab-c6323a10-7984-fcc2-fdb8-cbb03830f7de\/6878408686444be9ae6b69aedd61fa23.jpg.w1920.jpg\" itemprop=\"thumbnailUrl\"><meta content=\"PT30S\" itemprop=\"duration\"> <\/div> <\/div><\/div><div class=\"wc-clear-both\" style=\"height: 0px !important\"><\/div><\/div><div id=\"wc-fragment-terminator\" style=\"width: 100% !important; clear: both !important; height: 0px !important;\"><\/div><\/div>"
+  }
+};
+
+var _wcscript = document.createElement('script');
+_wcscript.setAttribute("type","text/javascript");
+
+_wcscript.setAttribute("id","wc-loaded-acssite");
+if (document.location.search.indexOf("wc-acs-libs=jit") >= 0) {
+  window.Webcollage.wcAcsLibsParamIsJit = true;
+  _wcscript.setAttribute("src", "https://content-preview.webcollage.net/aplus-partner-defs/kohls/resources/connections/aplus/js/acssite%40s.js?wc-acs-libs=jit");
+} else {
+  if (_wccontent.acssiteSig.indexOf("R") == 0) {
+    var acsSiteUrl = Webcollage.minOrMax("https://scontent.webcollage.net/apps/pp/assets/kohls/js/acssite%40s.js");
+    if (acsSiteUrl.lastIndexOf(".min.js") + 7 == acsSiteUrl.length)
+        _wcscript.setAttribute("src",  acsSiteUrl + "?ver=" + _wccontent.minAcssiteSig);
+    else
+        _wcscript.setAttribute("src",  acsSiteUrl + "?ver=" + _wccontent.acssiteSig);
+  } else
+    _wcscript.setAttribute("src", Webcollage.minOrMax(_wccontent.contentgatewayurl + "/kohls/resources/connections/aplus/js/acssite%40s.js") + "?ver=2020.10.2.491");
+}
+
+document.getElementsByTagName('head')[0].appendChild(_wcscript);

@@ -1,0 +1,14 @@
+BrightTag.site('4DPyaxM',function(s){
+s.dbe('product mp \x26 sp | category', 'pageData.productDetails.categoryName',{pageId:2869228});
+s.dbe('product mp \x26 sp | product id', '\tpageData.productDetails.pageItems[0].productID;',{pageId:2908823});
+s.dbe('product mp \x26 sp | sale price if available', '(function () { var price \x3d pageData.productDetails.pageItems[0].salePrice; if(price \x3d\x3d \x22N/A\x22){ return pageData.productDetails.pageItems[0].originalPrice; } else { return price; } })();',{pageId:2908823});
+s.dbe('product id - url', 'document.location.href.split(\x27/\x27).reverse()[1].split(\x22-\x22)[1]',{pageId:2908823});
+s.dbe('signal universal id', '\x27f9yTvKJUrDBzpn+ANj+kk6NZHx7R8BE1hjozFwpcXz4\\x3d\x27');
+s.dbe('customer | signal 1st party id - session', '\x274332721317155088012\x27');
+s.dbe('customer | adobe cookie v2', 's.marketingCloudVisitorID',{pageId:2908370});
+s.domready(function(){
+s.tag('\x3cscript\x3e\n// pintrk(\x27track\x27, \x27pagevisit\x27, {\n//     currency: \x27USD\x27,\n//     line_items: [{\n//      product_id: \x27'+s.data('product id - url')+'\x27\n//     }]\n//   });\n  pintrk(\x27track\x27, \x27pagevisit\x27, {\n    currency: \x27USD\x27,\n    line_items: [{\n     product_id: \x27'+s.data('product mp \x26 sp | product id')+'\x27,\n     product_category: \x27'+s.data('product mp \x26 sp | category')+'\x27,\n     product_price: \x27'+s.data('product mp \x26 sp | sale price if available')+'\x27\n    },]\n  });\n\x3c/script\x3e\n',{tagId:4847715});
+s.tag('\x3cscript\x3e\n(function() {\n\tvar encodedSuid \x3d encodeURIComponent(\x27'+s.data('signal universal id')+'\x27)\n\tvar domain \x3d document.domain.replace(/\\w*\\-\\w*\\.{1}/, \x27.\x27);\n\tvar ids \x3d (function() {\n\t\tif (navigator.userAgent.indexOf(\x22Safari\x22) \x3e 0 \x26\x26 navigator.userAgent.indexOf(\x22Chrome\x22) \x3d\x3d -1 \x26\x26 navigator.userAgent.indexOf(\x22Chromium\x22) \x3d\x3d -1) {\n\t\t\treturn \x22'+s.data('customer | signal 1st party id - session')+'\x22\n\t\t} else {\n\t\t\treturn encodedSuid\n\t\t}\n\t}());\n\tvar cookieValue \x3d \x27SignalUniversalID\x3d\x27 + ids + \x27;path\x3d/;domain\x3d\x27 + domain;\n\tdocument.cookie \x3d cookieValue;\n}());\n\x3c/script\x3e',{tagId:4847939});
+s.tag('\x3cimg height\x3d\x221\x22 width\x3d\x221\x22 style\x3d\x22display:none\x22 src\x3d\x22https://www.facebook.com/tr?id\x3d1272022626312394\x26ev\x3dPageView\x26cd[order_id]\x3d'+s.data('customer | adobe cookie v2')+'\x22/\x3e',{tagId:7432823});
+});
+});
