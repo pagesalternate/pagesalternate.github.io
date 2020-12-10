@@ -117,7 +117,7 @@ a:visited:hover {
     display: flex;
     overflow: hidden;
     margin: 10px;
-    padding: 12px 20px;
+    padding: 12px 25px;
     cursor: pointer;
     -webkit-user-select: none;
     -moz-user-select: none;
@@ -144,7 +144,7 @@ a:visited:hover {
     -webkit-box-align: center;
     align-items: center;
     -webkit-box-flex: 0;
-    flex: 0 0 200px;
+    flex: 0 0 220px;
     box-shadow: 2px 5px 10px var(--color-smoke);
 }
 .button:hover {
