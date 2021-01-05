@@ -324,13 +324,13 @@ function drawBg() {
     // drawMountain(550, 60, 200);
 
     // drawCircles(110);
-    // drawDots(110);
+    drawDots(192);
     // drawRandomCircles(110);
     // drawLinesNE(113);
     // drawLinesNW(113);
 
     // drawLinesNS(113);
-    drawLinesEW();
+    // drawLinesEW();
 
     // drawTriangles();
     // drawPlanes();
@@ -621,7 +621,7 @@ function drawDots(height) {
 
     // Pattern of Circles
     for (var i = 0; i < 75; i++) {
-        for (var j = 0; j < 11; j++) {
+        for (var j = 0; j < 19; j++) {
             $.ctx.beginPath();
             $.ctx.arc(
                 6 + 10 * i,
