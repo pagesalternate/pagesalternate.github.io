@@ -40,7 +40,7 @@ var $ = {
         xpos: 0,
         section: 50,
         car: {
-            maxSpeed: 180,
+            maxSpeed: 70,
             friction: 0.4,
             acc: 0.85,
             deAcc: 0.5,
