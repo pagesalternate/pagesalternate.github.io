@@ -5,9 +5,6 @@ var $ = {
     ctx2: null,
     colors: {
         sky: "#D4F5FE",
-        mountains: "#000",
-        // mountains: "#83CACE",
-
         ground: "#8FC04C",
         groundDark: "#73B043",
         road: "#606a7c",
@@ -17,10 +14,10 @@ var $ = {
         randomCircle: "#ff0000",
     },
     settings: {
-        fps: 60,
-        skySize: 200,
+        fps: 120,
+        skySize: 400,
         ground: {
-            size: 350,
+            size: 200,
             min: 4,
             max: 120,
         },
@@ -35,12 +32,12 @@ var $ = {
         startDark: true,
         curve: 0,
         currentCurve: 0,
-        turn: 1,
-        speed: 27,
+        turn: 7,
+        speed: 70,
         xpos: 0,
         section: 50,
         car: {
-            maxSpeed: 70,
+            maxSpeed: 30,
             friction: 0.4,
             acc: 0.85,
             deAcc: 0.5,
@@ -115,14 +112,14 @@ function draw() {
         drawRoad($.settings.road.min, $.settings.road.max, 10, $.colors.road);
         drawRoad(3, 24, 0, $.ctx.createPattern($.canvas2, "repeat"));
         drawCar();
-        drawHUD($.ctx, 630, 340, $.colors.hud);
+        drawHUD($.ctx, 1300, 700, $.colors.hud); //Speedometer
 
         requestAnimationFrame(draw);
     }, 1000 / $.settings.fps);
 }
 
 function drawHUD(ctx, centerX, centerY, color) {
-    var radius = 50,
+    var radius = 60,
         tigs = [0, 90, 135, 180, 225, 270, 315],
         angle = 90;
 
@@ -135,7 +132,7 @@ function drawHUD(ctx, centerX, centerY, color) {
     ctx.stroke();
 
     for (var i = 0; i < tigs.length; i++) {
-        drawTig(ctx, centerX, centerY, radius, tigs[i], 7);
+        drawTig(ctx, centerX, centerY, radius, tigs[i], 10);
     }
 
     // draw pointer
@@ -189,13 +186,16 @@ function calcMovement() {
 
     if ($.state.keypress.up) {
         $.state.speed += $.state.car.acc - $.state.speed * 0.015;
-    } else if ($.state.speed > 0) {
-        $.state.speed -= $.state.car.friction;
     }
+    //Reduce speed automatically if not on "up" button
+    // else if ($.state.speed > 0) {
+    //     $.state.speed -= $.state.car.friction;
+    // }
 
-    if ($.state.keypress.down && $.state.speed > 0) {
-        $.state.speed -= 1;
-    }
+    //Kinda killed the brakes
+    // if ($.state.keypress.down && $.state.speed > 0) {
+    //     $.state.speed -= 1;
+    // }
 
     // Left and right
     $.state.xpos -= $.state.currentCurve * $.state.speed * 0.005;
@@ -314,22 +314,37 @@ function map(value, sourceMin, sourceMax, destMin, destMax) {
 function clamp(value, min, max) {
     return Math.min(Math.max(value, min), max);
 }
+var fns = [
+    drawCircles,
+    drawDots,
+    drawRandomCircles,
+    drawLinesNE,
+    drawLinesNW,
+    drawLinesNS,
+    drawLinesEW,
+    drawTriangles,
+    drawPlanes,
+];
 
+function myTimer() {
+    var x = Math.floor(Math.random() * fns.length);
+    console.log("function is ", fns[x]);
+    fns[x]();
+    // wait(4000);
+}
 function drawBg() {
     $.ctx.fillStyle = $.colors.sky;
     $.ctx.fillRect(0, 0, $.canvas.width, $.settings.skySize);
-    // drawMountain(0, 60, 200);
-    // drawMountain(280, 40, 200);
-    // drawMountain(400, 80, 200);
-    // drawMountain(550, 60, 200);
 
-    // drawCircles(110);
-    drawDots(192);
-    // drawRandomCircles(110);
-    // drawLinesNE(113);
+    // setInterval(myTimer, 2000);
+
+    drawCircles();
+    // drawDots();
+    // drawRandomCircles();
+    // drawLinesNE();
     // drawLinesNW(113);
 
-    // drawLinesNS(113);
+    // drawLinesNS();
     // drawLinesEW();
 
     // drawTriangles();
@@ -359,6 +374,7 @@ function drawSky() {
 
 function drawRoad(min, max, squishFactor, color) {
     var basePos = $.canvas.width + $.state.xpos;
+    // console.log(basePos, "---------", color);
 
     $.ctx.fillStyle = color;
     $.ctx.beginPath();
@@ -387,7 +403,7 @@ function drawCar() {
     var carWidth = 160,
         carHeight = 50,
         carX = $.canvas.width / 2 - carWidth / 2,
-        carY = 320;
+        carY = 500;
 
     // shadow
     roundedRect(
@@ -416,8 +432,8 @@ function drawCar() {
 }
 
 function drawCarBody(ctx) {
-    var startX = 299,
-        startY = 311,
+    var startX = $.canvas.width / 2 - 80,
+        startY = 490,
         lights = [10, 26, 134, 152],
         lightsY = 0;
 
@@ -588,15 +604,16 @@ function drawGround(ctx, offset, lightColor, darkColor, width) {
 }
 // ======================================================================================
 
-function drawCircles(height) {
+function drawCircles() {
+    var height = $.settings.skySize - 10;
     $.ctx.fillStyle = $.colors.circle;
     $.ctx.strokeStyle = $.colors.circle;
     $.ctx.lineJoin = "round";
     $.ctx.lineWidth = 5;
 
     // Pattern of Circles
-    for (var i = 0; i < 50; i++) {
-        for (var j = 0; j < 6; j++) {
+    for (var i = 0; i < 86; i++) {
+        for (var j = 0; j < 20; j++) {
             $.ctx.beginPath();
             $.ctx.arc(
                 6 + 15 * i,
@@ -613,15 +630,17 @@ function drawCircles(height) {
     }
 }
 
-function drawDots(height) {
+function drawDots() {
+    var height = $.settings.skySize - 8;
+
     $.ctx.fillStyle = $.colors.circle;
     $.ctx.strokeStyle = $.colors.circle;
     $.ctx.lineJoin = "round";
     $.ctx.lineWidth = 1;
 
     // Pattern of Circles
-    for (var i = 0; i < 75; i++) {
-        for (var j = 0; j < 19; j++) {
+    for (var i = 0; i < 130; i++) {
+        for (var j = 0; j < 39; j++) {
             $.ctx.beginPath();
             $.ctx.arc(
                 6 + 10 * i,
@@ -642,16 +661,17 @@ function randomRange(min, max) {
     return min + Math.random() * (max - min);
 }
 function drawRandomCircles(height) {
+    var height = $.settings.skySize - 10;
     $.ctx.fillStyle = $.colors.circle;
     $.ctx.strokeStyle = $.colors.circle;
     $.ctx.lineJoin = "round";
     $.ctx.lineWidth = 1;
 
-    for (var i = 0; i < 600; i++) {
+    for (var i = 0; i < 3000; i++) {
         $.ctx.beginPath();
         $.ctx.arc(
-            6 + 10 * randomNumber(0, 50),
-            $.settings.skySize - height + randomNumber(0, 100),
+            6 + 10 * randomNumber(0, 150),
+            $.settings.skySize - height + randomNumber(0, 500),
             2,
             0,
             2 * Math.PI,
@@ -663,7 +683,8 @@ function drawRandomCircles(height) {
     }
 }
 
-function drawLinesNE(height) {
+function drawLinesNE() {
+    var height = $.settings.skySize - 10;
     $.ctx.fillStyle = $.colors.mountains;
     $.ctx.strokeStyle = $.colors.mountains;
     $.ctx.lineJoin = "round";
@@ -671,7 +692,7 @@ function drawLinesNE(height) {
 
     srcX = 0;
 
-    for (var i = 1; i <= 37; i++) {
+    for (var i = 1; i <= 75; i++) {
         $.ctx.beginPath();
         $.ctx.moveTo(srcX, $.settings.skySize);
         $.ctx.lineTo(srcX + 100, $.settings.skySize - height);
@@ -686,8 +707,8 @@ function drawLinesNE(height) {
     srcX = 0;
     for (var i = 1; i <= 4; i++) {
         $.ctx.beginPath();
-        $.ctx.moveTo(srcX, $.settings.skySize - 33);
-        $.ctx.lineTo(srcX + 71, $.settings.skySize - height);
+        $.ctx.moveTo(srcX, $.settings.skySize - 95);
+        $.ctx.lineTo(srcX + 80, $.settings.skySize - height);
 
         srcX = -i * 20;
 
@@ -698,6 +719,7 @@ function drawLinesNE(height) {
 }
 
 function drawLinesNW(height) {
+    var height = $.settings.skySize - 10;
     $.ctx.fillStyle = $.colors.mountains;
     $.ctx.strokeStyle = $.colors.mountains;
     $.ctx.lineJoin = "round";
@@ -731,7 +753,8 @@ function drawLinesNW(height) {
     }
 }
 
-function drawLinesNS(height) {
+function drawLinesNS() {
+    var height = $.settings.skySize - 6;
     $.ctx.fillStyle = $.colors.mountains;
     $.ctx.strokeStyle = $.colors.mountains;
     $.ctx.lineJoin = "round";
@@ -739,7 +762,7 @@ function drawLinesNS(height) {
 
     srcX = 0;
 
-    for (var i = 0; i <= 76; i++) {
+    for (var i = 0; i <= 151; i++) {
         $.ctx.beginPath();
         $.ctx.moveTo(srcX, $.settings.skySize);
         $.ctx.lineTo(srcX, $.settings.skySize - height);
@@ -760,7 +783,7 @@ function drawLinesEW() {
 
     srcX = 0;
 
-    for (var i = 0; i <= 11; i++) {
+    for (var i = 0; i <= 50; i++) {
         $.ctx.beginPath();
         y = $.settings.skySize - 10 * i;
 
