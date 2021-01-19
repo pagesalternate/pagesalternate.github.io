@@ -2,11 +2,23 @@ body {
     background-color: #070707;
     margin: 0;
     display: flex;
-    align-items: center;
+    /* align-items: center; */
     justify-content: center;
     min-height: 100vh;
 }
 
-canvas {
-    border-radius: 0.4em;
+h1 {
+    width: 100%;
+    text-align: center;
+    font-weight: 900;
+    font-size: 1.666em;
+    line-height: 1.414;
+}
+section {
+    background-color: white;
+    width: 96px;
+    height: 96px;
+    margin: 1vmin;
+    margin-bottom: 2em;
+    position: relative;
 }
