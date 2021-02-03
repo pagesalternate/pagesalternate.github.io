@@ -14,7 +14,7 @@ var patterns = [
 
 shuffle(patterns);
 getTime();
-setInterval(change_autorefreshdiv, 500);
+setInterval(change_autorefreshdiv, 20000);
 
 var temp = [...patterns];
 var i = 0;
