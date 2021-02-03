@@ -46,10 +46,10 @@ function change_autorefreshdiv() {
             i = 1;
 
             writeUserData(dbname, ip, delta);
-            readDB(dbname);
+          //  readDB(dbname);
 
             setTimeout(() => {
-                console.log("Window Closed!");
+           //     console.log("Window Closed!");
                 window.close();
             }, 2000);
         }
