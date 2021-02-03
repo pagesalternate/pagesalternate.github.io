@@ -14,7 +14,7 @@ var patterns = [
 
 shuffle(patterns);
 getTime();
-setInterval(change_autorefreshdiv, 20000);
+setInterval(change_autorefreshdiv, 500);
 
 var temp = [...patterns];
 var i = 0;
@@ -33,7 +33,10 @@ function change_autorefreshdiv() {
             // readDB(db);
             var pattern = temp;
             writeUserData(db, datetime, pattern);
-            window.close();
+
+            setTimeout(() => {
+                window.close();
+            }, 2000);
         }
     }
 
