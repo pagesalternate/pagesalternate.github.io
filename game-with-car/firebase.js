@@ -10,8 +10,6 @@ var firebaseConfig = {
 firebase.initializeApp(firebaseConfig);
 var database = firebase.database();
 
-//---------------------------------
-
 function readDB(db) {
     var leadsRef = database.ref(db);
     leadsRef.on("value", function (snapshot) {
@@ -35,19 +33,4 @@ function writeUserData(db, data1, data2) {
             [v1]: data1,
             [v2]: data2,
         });
-}
-
-function writeUserData2(result) {
-    // var temp = firebase.database().ref("no-car-with-buttons");
-    // for (i = 0; i < timer.length; i++) {
-    //     // console.log(i, timer[i]);
-    //     var x = timer[i];
-    //     temp.push({
-    //         [x[0]]: x[1],
-    //     });
-    // }
-
-    firebase.database().ref("no-car-with-buttons").push({
-        result,
-    });
 }
