@@ -49,7 +49,7 @@ function change_autorefreshdiv() {
           //  readDB(dbname);
 
             setTimeout(() => {
-           //     console.log("Window Closed!");
+                console.log("Window Closed!");
                 window.close();
             }, 2000);
         }
