@@ -6,12 +6,12 @@ var patterns = [
     "lines horizontal",
     "lines vertical",
     "lines plus",
-    // "lines cross",
-    // "lines left",
-    // "lines right",
-    // "dots heavy",
-    // "triangles",
-    // "planes",
+    "lines cross",
+    "lines left",
+    "lines right",
+    "dots heavy",
+    "triangles",
+    "planes",
 ];
 
 var temp = [...patterns];
@@ -25,18 +25,19 @@ function shuffle(array) {
     return array;
 }
 var i = 0;
+
 var ip;
 json(`https://api.ipify.org?format=json`).then((data) => {
     console.log(data.ip);
     ip = data.ip;
 });
-var db = "with-car";
+
+var dbname = "with-car";
 
 function change_autorefreshdiv() {
     shuffle(patterns);
 
     var patt = document.getElementById("sky");
-    var currentPattern = patt.className;
 
     if (patterns.length > 0) {
         var newPattern = patterns.shift();
@@ -44,16 +45,18 @@ function change_autorefreshdiv() {
         if (i == 0) {
             i = 1;
 
-            writeUserData(db, ip, delta);
-            readDB(db);
+            writeUserData(dbname, ip, delta);
+            readDB(dbname);
 
-            // window.close();
+            setTimeout(() => {
+                console.log("Window Closed!");
+                window.close();
+            }, 2000);
         }
     }
 
     patt.className = newPattern;
-    // console.log("New Pattern: ", newPattern);
-    // console.log("Length of delta is ", delta.length);
+    console.log("New Pattern: ", newPattern);
 }
 
 function json(url) {
