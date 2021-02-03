@@ -1,17 +1,17 @@
-setInterval(change_autorefreshdiv, 1000);
+setInterval(change_autorefreshdiv, 20000);
 
 var patterns = [
     "dots normal",
     "polka normal",
     "lines horizontal",
-//    "lines vertical",
-//    "lines plus",
-//    "lines cross",
-//    "lines left",
-//    "lines right",
-//    "dots heavy",
-//    "triangles",
-//    "planes",
+    "lines vertical",
+    "lines plus",
+    "lines cross",
+    "lines left",
+    "lines right",
+    "dots heavy",
+    "triangles",
+    "planes",
 ];
 
 var temp = [...patterns];
