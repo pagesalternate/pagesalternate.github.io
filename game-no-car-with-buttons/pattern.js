@@ -70,7 +70,7 @@ function stop() {
 
         jsonify(result);
         // readDB(db);
-        writeUserData2(result);
+        // writeUserData2(result);
 
         setTimeout(() => {
             window.close();
