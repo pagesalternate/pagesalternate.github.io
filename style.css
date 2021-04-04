@@ -104,9 +104,13 @@ a:visited:hover {
 }
 
 .button-container {
+    background-color: wheat;
+    border: 3px solid #000;
+    border-radius: 20px;
+    width: 100%;
     display: -webkit-box;
     display: flex;
-    margin: 60px auto;
+    margin: 20px auto;
     flex-wrap: wrap;
     -webkit-box-pack: center;
     justify-content: center;
