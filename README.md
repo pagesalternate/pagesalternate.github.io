@@ -1,5 +1,7 @@
 https://pagesalternate.github.io/
 
+<hr>
+
 Status Update:
 
 |               |        Old         |      New data      | New Images (1) | New Images (2) | New Images (3) |
