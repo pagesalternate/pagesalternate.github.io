@@ -8,7 +8,7 @@ Status Update:
 | ------------- | :----------------: | :----------------: | :------------: | :------------: | :------------: |
 | grey shoe     | :heavy_check_mark: | :heavy_check_mark: |                |                |                |
 | padded bra    | :heavy_check_mark: | :heavy_check_mark: |                |                |                |
-| stripe tights |                    | :heavy_check_mark: |                |                |                |
+| stripe tights | :heavy_check_mark: | :heavy_check_mark: |                |                |                |
 |               |                    |                    |                |                |                |
 | sports bra    |                    |                    |                |                |                |
 | lite sneakers |                    |                    |                |                |                |
